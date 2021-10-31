@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ContactForm.scss';
 
-function ContactForm({handleSubmitForm}) {
+function ContactForm({onSubmit}) {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     const handleChange = event => {
@@ -21,7 +21,7 @@ function ContactForm({handleSubmitForm}) {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleSubmitForm(name, number);
+        onSubmit({ name, number } );
         setName('');
         setNumber('');
     }
@@ -60,7 +60,7 @@ function ContactForm({handleSubmitForm}) {
 }
 
 ContactForm.propTypes = {
-    handleSubmitForm: PropTypes.func.isRequired,
+    handleSubmitForm: PropTypes.func,
 };
 
 export default ContactForm;

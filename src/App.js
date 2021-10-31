@@ -63,7 +63,6 @@ function App() {
   const handleChangeFilter = ({ target: { name, value } }) => {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
-
   return (
     <div className="App">
       <ContactForm onSubmit={handleSubmitForm} />
